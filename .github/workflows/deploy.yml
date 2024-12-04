@@ -1,40 +1,49 @@
 name: VuePress CI/CD
 
-# 触发条件：在 main 分支有 push 操作时触发
 on:
   push:
     branches:
-      - main  # 你也可以根据需要调整分支名
+      - main  # 监控主分支
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # 使用 GitHub 提供的 Ubuntu 虚拟机运行
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 运行环境
 
     steps:
-      # 第一步：检出代码
+      # 1. 检出代码
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # 第二步：设置 Node.js 环境
+      # 2. 设置 Node.js 环境
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22'  # 设置 Node.js 版本
+          node-version: '16'
 
-      # 第三步：安装依赖
+      # 3. 安装依赖
       - name: Install dependencies
         run: npm install
 
-      # 第四步：构建 VuePress 项目
+      # 4. 构建 VuePress 网站
       - name: Build VuePress site
         run: npm run build
 
-      # 第五步：部署到阿里云服务器
-      - name: Deploy to Aliyun server
-        env:
-          HOST: ${{ secrets.ALIYUN_HOST }}   # 设置为 GitHub Secrets 中的环境变量
-          USER: ${{ secrets.ALIYUN_USER }}   # 设置为 GitHub Secrets 中的环境变量
-          KEY: ${{ secrets.ALIYUN_KEY }}     # 设置为 GitHub Secrets 中的环境变量
+      # 5. 创建 SSH 私钥文件并设置权限
+      - name: Create SSH private key file
         run: |
-          # 使用 SCP 命令将构建后的文件上传到服务器
-          scp -i $KEY -r ./docs/.vuepress/dist $USER@$HOST:/www/zhouchuang.site
+          echo "$ALIYUN_KEY" > private_key
+          chmod 600 private_key
+
+      # 6. 添加 SSH 密钥到 SSH Agent
+      - name: Add SSH private key to the agent
+        run: |
+          mkdir -p ~/.ssh
+          mv private_key ~/.ssh/id_rsa
+          # 添加目标服务器的主机密钥到 known_hosts，以避免主机验证失败
+          ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_rsa
+
+      # 7. 使用 SCP 命令将构建后的文件上传到服务器
+      - name: Deploy to Aliyun server
+        run: |
+          scp -i ~/.ssh/id_rsa -r ./docs/.vuepress/dist $USER@$HOST:/www/zhouchuang.site
