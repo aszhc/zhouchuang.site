@@ -1,0 +1,33 @@
+name: VuePress CI/CD
+
+on:
+  push:
+    branches:
+      - main  # 监控主分支的变动
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'  # 设置 Node 版本
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build VuePress site
+        run: npm run build
+
+      - name: Deploy to Aliyun server
+        env:
+          HOST: ${{ secrets.ALIYUN_HOST }}
+          USER: ${{ secrets.ALIYUN_USER }}
+          KEY: ${{ secrets.ALIYUN_KEY }}
+        run: |
+          scp -i $KEY -r ./docs/.vuepress/dist $USER@$HOST:/path/to/your/website
