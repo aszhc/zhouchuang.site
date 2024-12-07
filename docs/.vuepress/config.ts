@@ -298,6 +298,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         },
       },
     ],
+    [
+      'vuepress-plugin-mermaidjs'
+    ],
     // [
     //   'vuepress-plugin-comment', // 评论
     //   {
