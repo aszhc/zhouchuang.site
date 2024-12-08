@@ -190,7 +190,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       createYear: 2019, // 博客创建年份
       copyrightInfo:
         // 'Zhou Chuang', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
-      'Zhou Chuang | <a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备2021031629号</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
+      'Zhou Chuang 版权所有| <a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备2021031629号-2</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
@@ -259,9 +259,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             frontUrl: 'https://www.google.com/search?q=',
           },
           {
-            title: '在Bing中搜索',
-            frontUrl: 'https://cn.bing.com/search?q=',
+            title: '在百度中搜索',
+            frontUrl: 'https://www.baidu.com/s?&wd=',
           },
+          {
+            title: '在 github 中搜索',
+            frontUrl: 'https://github.com/search?q='
+          }
         ],
       }
     ],
