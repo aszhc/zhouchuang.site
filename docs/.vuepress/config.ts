@@ -41,24 +41,19 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           //     // { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
           //   ],
           // },
-          // {
-            // text: '日常总结',
-            // items: [
-              // { text: '《JavaScript教程》', link: '/note/javascript/' },
-            // ],
-          // },
+          {text: '日常总结', link: '/Ops/daily-summary/'},
+          {text: 'Prometheus', link: '/Ops/prometheus/'},
         ],
       },
       {
         text: 'Go',
         link: '/golang/',
         items: [
-          { text: '基础', link: '/pages/5d127a/' },
-          // { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
+          { text: '基础', link: '/golang/fundamentals/' },
         ],
       },
       {
-        text: '技术',
+        text: '专题',
         link: '/technology/',
         items: [
           // { text: '01.redis', link: '/pages/420363/' },
@@ -109,8 +104,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
     docsBranch: 'main', // 编辑的文件所在分支，默认master。 注意：如果你的分支是main则修改为main
-    editLinks: true, // 启用编辑
-    editLinkText: '编辑',
+    // editLinks: true, // 启用编辑
+    // editLinkText: '编辑',
 
     //*** 以下是Vdoing主题相关配置，文档：https://doc.xugaoyi.com/pages/a20ce8/ ***//
 
@@ -183,6 +178,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           iconClass: 'icon-erji',
           title: '听音乐',
           link: 'https://music.163.com/#/playlist?id=145145767',
+        },
+        {
+          iconClass: 'icon-douban',
+          title: '豆瓣',
+          link: 'https://www.douban.com/people/152611376',
         },
       ],
     },
@@ -338,6 +338,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         },
       },
     ],
+    'reading-progress',
   ],
 
   markdown: {

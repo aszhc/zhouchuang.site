@@ -17,7 +17,7 @@ features: # 可选的
     details: Go 语言相关技术栈
     link: /golang/
     imgUrl: /img/go-8.svg
-  - title: 技术
+  - title: 专题
     details: 技术文档、教程、技巧、总结等文章
     link: /technology/
     imgUrl: /img/other.png
