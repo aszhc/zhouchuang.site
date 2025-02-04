@@ -227,6 +227,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
     //   },
     // ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
+
+    ['script', { src: 'https://cdn.staticfile.org/twikoo/1.6.41/twikoo.all.min.js' }],
   ],
 
 
@@ -339,6 +341,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
     'reading-progress',
+
+    // twikoo 评论
+    [
+    	{
+        	name: 'custom-plugins',
+        	globalUIComponents: ["Twikoo"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+    	}
+    ]
   ],
 
   markdown: {
