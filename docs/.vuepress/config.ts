@@ -155,7 +155,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'img/aszhc.jpg',
+      avatar: 'img/aszhc2.png',
       name: 'Zhou Chuang',
       slogan: '为学日益 为道日损',
     },
