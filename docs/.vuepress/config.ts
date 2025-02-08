@@ -255,7 +255,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     'flexsearch-pro',
 
     // ppt
-    '@talltotal/vuepress-plugin-ppt',
+    ["reveal-js"],
+
+    // '@talltotal/vuepress-plugin-ppt',
     // 可以添加第三方搜索链接的搜索框（继承原官方搜索框的配置参数）
     [
       'thirdparty-search',
