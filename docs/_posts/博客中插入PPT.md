@@ -15,7 +15,7 @@ ppt:
   transition: fade
 ---
 
-## 一
+## 备忘
 
 :::reveal ppt
 <section>

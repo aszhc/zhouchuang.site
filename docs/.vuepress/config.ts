@@ -66,6 +66,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '基础',
         link: '/computer-fundamentals/',
         items: [
+          {text: '「编码」', link: '/computer-fundamentals/Code/'},
           // {text: '计算机网络', link: '/pages/e4b826/'},
           // {text: '数据结构与算法', link: '/computer-fundamentals/algorithm/'},
         ]
@@ -228,7 +229,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     //   },
     // ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
 
-    ['script', { src: 'https://cdn.staticfile.org/twikoo/1.6.41/twikoo.all.min.js' }],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.all.min.js' }],
   ],
 
 
