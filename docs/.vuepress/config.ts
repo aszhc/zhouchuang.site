@@ -41,6 +41,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           //     // { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
           //   ],
           // },
+          {text: '常用命令', link: '/Ops/linux-commands/'},
           {text: '日常总结', link: '/Ops/daily-summary/'},
           {text: 'Prometheus', link: '/Ops/prometheus/'},
         ],
