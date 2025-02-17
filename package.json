@@ -37,6 +37,7 @@
     "fsevents": "^2.3.3"
   },
   "dependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
     "vuepress-plugin-reading-progress": "^1.0.10",
     "vuepress-plugin-reveal-js": "^0.0.5"
   }
