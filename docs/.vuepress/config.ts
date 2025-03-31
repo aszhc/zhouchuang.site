@@ -51,6 +51,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         link: '/golang/',
         items: [
           { text: '基础', link: '/golang/fundamentals/' },
+          { text: '常用库', link: '/golang/libraries/' },
         ],
       },
       {
@@ -157,7 +158,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'img/aszhc2.jpg',
+      avatar: 'img/aszhc3.jpg',
       name: 'Zhou Chuang',
       slogan: '为学日益 为道日损',
     },
