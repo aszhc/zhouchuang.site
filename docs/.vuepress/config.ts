@@ -69,7 +69,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         link: '/computer-fundamentals/',
         items: [
           {text: '「编码」', link: '/computer-fundamentals/Code/'},
-          // {text: '计算机网络', link: '/pages/e4b826/'},
+          {text: '计算机网络学习笔记', link: '/computer-fundamentals/Computer-Network/'}
           // {text: '数据结构与算法', link: '/computer-fundamentals/algorithm/'},
         ]
       },
