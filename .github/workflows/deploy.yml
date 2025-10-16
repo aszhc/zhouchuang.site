@@ -44,3 +44,4 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H -p $SSH_PORT $HOST >> ~/.ssh/known_hosts
           rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -p $SSH_PORT" ./docs/.vuepress/dist/ $USER@$HOST:/data/safeline/resources/nginx/static/static_1
+
