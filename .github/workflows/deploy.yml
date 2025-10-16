@@ -37,9 +37,10 @@ jobs:
           HOST: ${{ secrets.ALIYUN_HOST }}
           USER: ${{ secrets.ALIYUN_USER }}
           KEY: ${{ secrets.ALIYUN_KEY }}
+          SSH_PORT: 1022
         run: |
           mkdir -p ~/.ssh/
           echo "$KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
-          rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -p 1022" ./docs/.vuepress/dist/ $USER@$HOST:/data/safeline/resources/nginx/static/static_1
+          ssh-keyscan -H -p $SSH_PORT $HOST >> ~/.ssh/known_hosts
+          rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -p $SSH_PORT" ./docs/.vuepress/dist/ $USER@$HOST:/data/safeline/resources/nginx/static/static_1
